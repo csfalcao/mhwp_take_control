@@ -1,0 +1,46 @@
+#!/bin/bash
+
+red='\e[0;31m'
+white='\e[0;37m'
+NC='\e[0m' # No Color
+
+clear
+echo -e "${red}Hi, welcome to My Happy WordPress installer. In minutes you will have a high performance server ready. Ready?${NC}"
+sleep 2
+echo "Starting in 3"
+sleep 1
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+echo "Go!"
+sleep 1
+echo "First step, let's update uour Ubuntu"
+apt-get update > /dev/null &
+echo -ne '                          (00%)\r'
+sleep 1
+echo -ne '#                         (05%)\r'
+sleep 1
+echo -ne '##                        (15%)\r'
+sleep 1
+echo -ne '#####                     (33%)\r'
+sleep 1
+echo -ne '#############             (66%)\r'
+echo -ne '###############           (75%)\r'
+echo -ne '##################        (85%)\r'
+sleep 1
+echo -ne '#######################   (100%)\r'
+echo -ne '\n'
+sleep 1
+echo "Ok, now we'll separete part of your disk to memory - it's called SWAP disk"
+cd /var
+touch swap.img
+chmod 600 swap.img
+dd if=/dev/zero of=/var/swap.img bs=512k count=1000
+mkswap /var/swap.img
+swapon /var/swap.img
+echo /var/swap.img    none    swap    sw    0    0 > /etc/fstab
+sleep 2
+echo "Cool, SWAP disk is ready, let's go for the next step"
+end
+
