@@ -17,22 +17,149 @@ echo "Go!"
 sleep 1
 echo "First step, let's update uour Ubuntu"
 apt-get update > /dev/null &
-echo -ne '                          (00%)\r'
+echo -ne '                           (00%)\r'
+sleep 0.2
+echo -ne '*                          (00%)\r'
+sleep 0.2
+echo -ne '                           (00%)\r'
+sleep 0.2
+echo -ne '*                          (00%)\r'
+sleep 0.2
+echo -ne '                           (00%)\r'
+sleep 0.2
+echo -ne '*                          (00%)\r'
+sleep 0.2
+echo -ne '                           (00%)\r'
+sleep 0.2
+echo -ne '*                          (00%)\r'
+sleep 0.2
+echo -ne '                           (02%)\r'
+sleep 0.2
+echo -ne '*                          (03%)\r'
+sleep 0.2
+echo -ne '#                          (05%)\r'
+sleep 0.2
+echo -ne '#*                         (05%)\r'
+sleep 0.2
+echo -ne '#                          (05%)\r'
+sleep 0.2
+echo -ne '#*                         (08%)\r'
+sleep 0.2
+echo -ne '#                          (10%)\r'
+sleep 0.2
+echo -ne '#*                         (10%)\r'
+sleep 0.2
+echo -ne '#                          (10%)\r'
+sleep 0.2
+echo -ne '#*                         (10%)\r'
+sleep 0.2
+echo -ne '#                          (10%)\r'
+sleep 0.2
+echo -ne '#*                         (12%)\r'
+sleep 0.2
+echo -ne '##                         (15%)\r'
+sleep 0.2
+echo -ne '##*                        (15%)\r'
+sleep 0.2
+echo -ne '##                         (15%)\r'
+sleep 0.2
+echo -ne '##*                        (15%)\r'
+sleep 0.2
+echo -ne '##                         (15%)\r'
+sleep 0.2
+echo -ne '##*                        (15%)\r'
+sleep 0.2
+echo -ne '##                         (15%)\r'
+sleep 0.2
+echo -ne '##*                        (15%)\r'
+sleep 0.2
+echo -ne '##                         (15%)\r'
+sleep 0.2
+echo -ne '##*                        (20%)\r'
+sleep 0.2
+echo -ne '###                        (20%)\r'
+sleep 0.2
+echo -ne '###*                       (25%)\r'
+sleep 0.2
+echo -ne '###                        (25%)\r'
 sleep 1
-echo -ne '#                         (05%)\r'
+echo -ne '#####*                     (33%)\r'
 sleep 1
-echo -ne '##                        (15%)\r'
-sleep 1
-echo -ne '#####                     (33%)\r'
-sleep 1
-echo -ne '#############             (66%)\r'
-echo -ne '###############           (75%)\r'
-echo -ne '##################        (85%)\r'
+echo -ne '######*                    (35%)\r'
+sleep 0.2
+echo -ne '######                     (35%)\r'
+sleep 0.2
+echo -ne '######*                    (35%)\r'
+sleep 0.2
+echo -ne '######                     (35%)\r'
+sleep 0.2
+echo -ne '######*                    (35%)\r'
+sleep 0.2
+echo -ne '######                     (35%)\r'
+sleep 0.2
+echo -ne '######*                    (35%)\r'
+sleep 0.2
+echo -ne '######                     (35%)\r'
+sleep 0.2
+echo -ne '######*                    (35%)\r'
+sleep 0.2
+echo -ne '######                     (35%)\r'
+sleep 0.2
+echo -ne '#######*                   (40%)\r'
+sleep 0.2
+echo -ne '#######                    (40%)\r'
+sleep 0.2
+echo -ne '#######*                   (40%)\r'
+sleep 0.2
+echo -ne '#######                    (40%)\r'
+sleep 0.2
+echo -ne '#######*                   (40%)\r'
+sleep 0.2
+echo -ne '#######                    (40%)\r'
+sleep 0.2
+echo -ne '#######*                   (40%)\r'
+sleep 0.2
+echo -ne '#######                    (40%)\r'
+sleep 0.2
+echo -ne '#######*                   (40%)\r'
+sleep 0.2
+echo -ne '#######                    (40%)\r'
+sleep 0.2
+echo -ne '########*                  (45%)\r'
+echo -ne '#########*                 (50%)\r'
+sleep 0.2
+echo -ne '##########*                (55%)\r'
+sleep 0.2
+echo -ne '##########                 (55%)\r'
+sleep 0.2
+echo -ne '##########*                (55%)\r'
+sleep 0.2
+echo -ne '##########                 (55%)\r'
+sleep 0.2
+echo -ne '##########*                (55%)\r'
+sleep 0.2
+echo -ne '##########                 (55%)\r'
+sleep 0.2
+echo -ne '##########*                (55%)\r'
+sleep 0.2
+echo -ne '##########                 (55%)\r'
+sleep 0.2
+echo -ne '##########*                (55%)\r'
+sleep 0.2
+echo -ne '##########                 (55%)\r'
+sleep 0.2
+echo -ne '###########*               (60%)\r'
+sleep 0.2
+echo -ne '#############*             (66%)\r'
+sleep 0.2
+echo -ne '###############*           (75%)\r'
+sleep 0.2
+echo -ne '##################*        (85%)\r'
 sleep 1
 echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 sleep 1
-echo "Ok, now we'll separete part of your disk to memory - it's called SWAP disk"
+echo "Ok, now we'll separate part of your disk to memory - it's called SWAP disk"
 cd /var
 touch swap.img
 chmod 600 swap.img
@@ -43,4 +170,3 @@ echo /var/swap.img    none    swap    sw    0    0 > /etc/fstab
 sleep 2
 echo "Cool, SWAP disk is ready, let's go for the next step"
 end
-
