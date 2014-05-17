@@ -5,7 +5,11 @@ white='\e[0;37m'
 NC='\e[0m' # No Color
 
 clear
-echo -e "${red}Hi, welcome to My Happy WordPress installer. In minutes you will have a high performance server ready. Ready?${NC}"
+echo -e "${red}Hi, welcome to My Happy WordPress installer.${NC}"
+sleep 3
+echo -e "${red}In minutes you will have a high performance server for WordPress.${NC}"
+sleep 2
+echo -e "${red}Ready?${NC}"
 sleep 2
 echo "Starting in 3"
 sleep 1
@@ -15,7 +19,13 @@ echo "1"
 sleep 1
 echo "Go!"
 sleep 1
-echo "First step, let's update uour Ubuntu"
+echo "First, let's update your Ubuntu"
+nginx=stable
+add-apt-repository ppa:nginx/$nginx -y &> /dev/null
+sleep 2
+echo "Update server found"
+sleep 1
+echo "Downloading files:"
 apt-get update > /dev/null &
 echo -ne '                           (00%)\r'
 sleep 0.2
@@ -126,6 +136,7 @@ sleep 0.2
 echo -ne '#######                    (40%)\r'
 sleep 0.2
 echo -ne '########*                  (45%)\r'
+sleep 0.2
 echo -ne '#########*                 (50%)\r'
 sleep 0.2
 echo -ne '##########*                (55%)\r'
@@ -153,12 +164,14 @@ sleep 0.2
 echo -ne '#############*             (66%)\r'
 sleep 0.2
 echo -ne '###############*           (75%)\r'
-sleep 0.2
-echo -ne '##################*        (85%)\r'
-sleep 1
+sleep 2
+echo -ne '##################         (85%)\r'
+sleep 2
 echo -ne '#######################   (100%)\r'
 echo -ne '\n'
-sleep 1
+sleep 2
+echo "Server updated!"
+sleep 2
 echo "Ok, now we'll separate part of your disk to memory - it's called SWAP disk"
 cd /var
 touch swap.img
@@ -168,5 +181,47 @@ mkswap /var/swap.img
 swapon /var/swap.img
 echo /var/swap.img    none    swap    sw    0    0 > /etc/fstab
 sleep 2
-echo "Cool, SWAP disk is ready, let's go for the next step"
-end
+echo "Cool, SWAP disk was created and is ready"
+sleep 2
+echo "Let's make it more secure"
+echo tmpfs /dev/shm tmpfs defaults,ro 0 0 > /etc/fstab
+sleep 2
+echo "Swap disk now secured"
+sleep 2
+echo "Let's start now the real stuff: Nginx"
+sleep 2
+echo "NginX will make your site very very FAST"
+apt-get install nginx-extras -y > /dev/null
+sleep 1
+echo "Latest version of NginX installed, let's start it"
+sleep 2
+service nginx restart
+sleep 2
+nginx -v
+echo "Cool, just take a look at your website now"
+sleep 3
+echo "Visit your www site or your IP address, it will show: Welcome to nginx!"
+sleep 2
+echo "I'll wait 10 seconds so you can check it out"
+sleep 5
+echo "5 secs left"
+sleep 3
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+echo "See it? Cool huh? Ok more 5 seconds so you can celebrate before we go to on"
+sleep 2
+echo "Maybe you tweet about it #MHWP"
+sleep 2
+echo "Your new site will ROCK"
+sleep 2
+echo "Ok, let's move!"
+sleep 1
+echo "DOUBLE TIME/r"
+sleep 1
+echo "Let's now install PHP"
+apt-get install php5-fpm php5-cgi php5-common php-apc php5-mysql php5-dev php5-curl php5-gd php5-imagick php5-mcrypt php5-snmp -y
+echo "Latest version of PHP installed"
+service php5-fpm restart
+service nginx restart
