@@ -210,7 +210,7 @@ echo "2"
 sleep 1
 echo "1"
 sleep 1
-echo "See it? Cool huh? Ok more 5 seconds so you can celebrate before we go to on"
+echo "See it? Cool huh? Ok more 5 seconds so you can celebrate before we can go on"
 sleep 2
 echo "Maybe you tweet about it #MHWP"
 sleep 2
